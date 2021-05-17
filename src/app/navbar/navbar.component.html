@@ -1,0 +1,76 @@
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/">Cake Shop</a>
+    <form class="d-flex">
+      <input [(ngModel)]="searchValue"
+      class="form-control me-2"
+      type="search"
+      
+      aria-label="Search"
+      name="search"
+      id="search"
+      autocomplete="off"
+      
+      />
+      <button
+      
+      class="btn btn-outline-success"
+      type="submit"
+      (click)="search()"
+      >
+      Search
+    </button>
+  </form>
+  <button
+  class="navbar-toggler"
+  type="button"
+  data-bs-toggle="collapse"
+  data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <!-- <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li> -->
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li> -->
+      </ul>
+      <!-- <form (submit)="upload($event)" >
+        <input type="file" name="imagefile">
+        <button>Upload Image</button>
+      </form> -->
+      <button (click)="myorder()"class="order" *ngIf="!flag">My Order</button>
+      <button (click)="carts()"class="carts" *ngIf="!flag"><i  class="fas fa-shopping-cart"></i></button>
+      <button (click)="admin()" class="admin" *ngIf="adminflag"><i class="fas fa-user-shield"></i></button>
+      <button *ngIf="flag" class="btn btn-primary" type="submit" routerLink="/login">
+        Login
+      </button>
+      <button (click)='logout()' *ngIf="!flag" class="btn btn-primary" type="submit" routerLink="/login">
+        LogOut
+      </button>
+    </div>
+  </div>
+</nav>
+

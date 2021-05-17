@@ -1,0 +1,78 @@
+<div>
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Image</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Weight</th>
+           
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let parcake of choosecake; let i=index">
+            <th scope="row">{{i+1}}</th>
+            <td><img class="sizes" src="{{parcake.image}}"/></td>
+            <td>{{parcake.name}}</td>
+            <td>₹ {{parcake.price}}/-</td>
+            <td><i class="far fa-minus-square"></i>{{parcake.quantity}}<i class="far fa-plus-square"></i></td>
+            <td>{{parcake.weight}} kg</td>
+             </tr>
+          <tr>
+            <th></th>
+            <td></td>
+            <td>Total:</td>
+            <td>₹ {{choosecake.totalprice}}/-</td>
+            <td></td>
+            <td></td>
+           
+        </tr>
+          <tr>
+              <th></th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><button (click)="confirm()">Confirmation</button></td>
+           </tr>
+         </tbody>
+      </table>
+</div>
+
+<!-- <div class="contain">
+    <div class="tables">
+        <h5>#</h5>
+        <h5>Order Id</h5>
+        <h5>Date</h5>
+        <h5>Name</h5>
+        <h5>Price</h5>
+        <h5>Mode</h5>
+    </div>
+  <div class="table" *ngFor="let parcake of order; let i = index" (click)="details(i)">
+    <p>{{ i + 1 }}</p>
+    <p>{{ parcake.orderid }}</p>
+    <p>{{ parcake.orderdate }}</p>
+    <p>{{ parcake.name }}</p>
+    <p>{{ parcake.price }}</p>
+    <p>{{ parcake.mode }}</p>
+  
+  
+  <div class="hidden" id="cake{{i}}" > 
+   <div class="orderDetails" *ngFor="let peritem of parcake.cakes">
+      <p scope="row"><img class="pic"src="{{ peritem.image }}" /></p>
+       <p>{{ peritem.name }}</p>
+       <p>{{ peritem.price }}</p>
+       <p>{{ peritem.quantity }}</p>
+       <p>{{ peritem.price }}/-</p>
+       <p>{{ peritem.total }}</p>
+   </div>
+  
+    </div> 
+  
+  
+  </div>
+  
+  </div>
+  <button (click)='confirm()'>Confirmation</button> -->

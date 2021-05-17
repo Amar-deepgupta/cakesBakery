@@ -1,0 +1,30 @@
+.left{
+    position: absolute;
+    left: 5px;
+    width: 15%;
+    height: 50vh;
+    top: 90px;
+    list-style: none;
+    color:#ffdead;
+    background-color: rgba(0,0,0,0.8);
+    border: 1px solid;
+}
+li{
+    position: relative;
+top:20px;
+left:10px;
+}
+.dis{
+    
+        color: currentColor;
+        cursor: not-allowed;
+        opacity: 0.5;
+        text-decoration: none;
+      
+}
+.right{
+    position: relative;
+    left:8vw;
+    top:30px;
+
+}

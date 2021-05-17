@@ -1,0 +1,44 @@
+<div>
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Image</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Weight</th>
+            <th scope="col">Remove</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let parcake of choosecake; let i=index">
+            <th scope="row">{{i+1}}</th>
+            <td><img class="sizes" src="{{parcake.image}}"/></td>
+            <td>{{parcake.name}}</td>
+            <td>₹ {{parcake.price}}/-</td>
+            <td><i class="far fa-minus-square"></i>{{parcake.quantity}}<i class="far fa-plus-square"></i></td>
+            <td>{{parcake.weight}} kg</td>
+            <td (click)="remove(parcake.cakeid)"><i  class="far fa-trash-alt"></i></td>
+          </tr>
+          <tr>
+            <th></th>
+            <td></td>
+            <td>Total:</td>
+            <td>₹ {{choosecake.totalprice}}/-</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+          <tr>
+              <th></th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><button (click)="confirm()">Confirmation</button></td>
+              <td><button (click)="order()">Place Order</button></td>
+          </tr>
+         </tbody>
+      </table>
+</div>

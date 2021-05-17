@@ -1,0 +1,25 @@
+
+<div class= "filter">
+    <input [(ngModel)]="min" type="text" name="minValue" class="box" autocomplete="off">
+    <input [(ngModel)]="max"type="text" name="maxValue" class="box" autocomplete="off">
+    <button type="submit"  class="sort" (click)="filters()" >Filter</button>
+
+</div>
+<div class="cart">
+    <div routerLink='/cake/{{cards.cakeid}}'
+      appHovering
+      *ngFor="let cards of cakesort"
+      class="card"
+      style="width: 18rem"
+    >
+    <span class="veg" *ngIf="cards.eggless">🟢</span>
+    <span class="veg" *ngIf="!cards.eggless">🔴</span>
+      <img src="{{ cards.image }}" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">Name:&nbsp;{{ cards.name }}</h5>
+        <p class="card-text">Price:&nbsp;₹ {{ cards.price }} </p>
+        <p class="card-text">Weight:&nbsp;{{ cards.weight }}kg</p>
+      </div>
+    </div>
+  </div>
+  

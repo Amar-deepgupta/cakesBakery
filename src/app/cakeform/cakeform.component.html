@@ -1,0 +1,19 @@
+<div class="addlist">
+    <h5>Add item</h5>
+    <form class="form-style">
+        <input name="cake name"  [(ngModel)]="addvalue.name"  placeholder="Enter Cake Name"><br>
+        <input name="cake Image" [(ngModel)]="addvalue.file" type="file" placeholder="No file choosen"><br>
+        <input name="cake rate" [(ngModel)]="addvalue.price" type="text" placeholder="Enter Price"><br>
+        <input name="cake weight" [(ngModel)]="addvalue.weight" type="text" placeholder="Enter Weight"><br>
+        <input name="cake eggless" [(ngModel)]="addvalue.eggless" type="checkbox"><span>Eggless</span><br>
+        <input name="cake ingreds" [(ngModel)]="addvalue.ingredients" type="text" placeholder="Enter Ingredients"><br>
+        <select  name="categories" [(ngModel)]="addvalue.categories" >
+            <option value="Birthday cake">Chocolate cake</option>
+            <option value="Vanilla cake">Vanilla Cake</option>
+            <option value="Butterscotch cake">Butterscotch Cake</option>
+            <option value="BlackForest cake">BlackForest Cake</option>
+        </select><br>
+        <textarea name="cake describe" [(ngModel)]="addvalue.description" placeholder="Enter Description"></textarea>
+        <button (click)="added()" type="button" class="btn">Save</button>
+    </form>
+</div>

@@ -1,0 +1,10 @@
+.carousel-inner{
+    max-height: 500px;
+}
+img{
+    width:400px;
+    height:400px;
+}
+.carousel-control-next,.carousel-control-prev{
+    width:5%;
+}

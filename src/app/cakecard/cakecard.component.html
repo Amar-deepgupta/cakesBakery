@@ -1,0 +1,23 @@
+
+<div class="cart" *ngIf="!flag">
+  <div (click)="cakedetail(i)"
+    appHovering
+    *ngFor="let cards of data; let i=index"
+    class="card"
+    style="width: 18rem"
+  >
+    <img src="{{ cards.image }}" class="card-img-top" alt="..." />
+    <div  class="card-body">
+      <h5 class="card-title">Name:&nbsp;{{ cards.name }}</h5><br>
+      
+      <p class="card-text">Price:&nbsp;₹ {{ cards.price }}</p>
+      
+     
+    </div>
+  </div>
+  
+</div>
+<div class="error" *ngIf="flag">
+  <img class="imgerr" src="../../assets/error.jpg"/>
+ </div>
+  
