@@ -10,9 +10,12 @@ import { CakeService } from '../cake.service';
 })
 export class ConfirmComponent implements OnInit {
 
-  constructor(public cs: CakeService){}
+  constructor(public cs: CakeService,private route:Router){}
 
   ngOnInit(): void {
   }
-
+  placeorder() {
+    this.route.navigate(['/cakeorders']);
+  
+}
 }

@@ -1,6 +1,8 @@
-<div class="conatiner">
-<p>Name:{{cs.confirmDetails.name}}</p>
-<p>Address:{{cs.confirmDetails.address}}</p>
-<p>Phone:{{cs.confirmDetails.Phone}}</p>
-<p>:{{cs.confirmDetails.name}}</p>
+<div class="conatiners">
+<p>Name:  <span>  {{cs.confirmDetails.name}}</span></p>
+<p>Address: <span>{{cs.confirmDetails.address}}</span></p>
+<p>City:   <span> {{cs.confirmDetails.city}}</span></p>
+<p>Phone:  <span> {{cs.confirmDetails.phone}}</span></p>
+<p>Price:   <span>{{cs.confirmDetails.price}}</span></p>
+<button class="btn btn-primary"(click)="placeorder()">Place Order</button>
 </div>

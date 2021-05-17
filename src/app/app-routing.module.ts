@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: 'search', component: SearchpageComponent },
   { path: 'cake/:id', component: CakeDetailsComponent },
   { path: 'cart', component: BucketComponent },
-  { path:'myorders',component:MyodersComponent},
+  { path:'cakeorders',component:MyodersComponent},
   { path: 'order', component: OrderformComponent },
    //{path:'summary',component:SummaryComponent},
   { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },

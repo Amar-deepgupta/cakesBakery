@@ -39,8 +39,8 @@ export class OrderformComponent implements OnInit {
     this.route.navigate(['checkout/confirm']);
   this.client.post(this.api + 'addcakeorder',this.userdetails).subscribe((res: any) => {
     console.log("response from addcakeOrder", res);
-    // this.cs.confirmDetails = { ...this.userdetails };
-    // console.log(this.cs.confirmDetails);
+     this.cs.confirmDetails = { ...this.userdetails,...this.userdetails.cakes };
+     console.log(this.cs.confirmDetails);
   }, (error) => {
     console.log("error from upload api",error)
       }
