@@ -29,6 +29,8 @@ import { EditfromComponent } from './editfrom/editfrom.component';
 import { MyodersComponent } from './myoders/myoders.component';
 import { SummaryComponent } from './summary/summary.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { ConfirmComponent } from './confirm/confirm.component';
+import { AddressComponent } from './address/address.component';
 
 
 @NgModule({
@@ -53,7 +55,9 @@ import { CheckoutComponent } from './checkout/checkout.component';
     EditfromComponent,
     MyodersComponent,
     SummaryComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    ConfirmComponent,
+    AddressComponent
   ],
   imports: [
     BrowserModule,

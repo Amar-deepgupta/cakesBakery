@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CakeService } from '../cake.service';
 
 @Component({
   selector: 'app-summary',
@@ -11,7 +12,7 @@ export class SummaryComponent implements OnInit {
   choosecake: any = {};
   totalprice: any = 0;
    api = 'https://apifromashu.herokuapp.com/api/';
-  constructor(private client: HttpClient,private router:Router) {
+  constructor(private client: HttpClient,private router:Router,public cs:CakeService) {
     this.showing();
     
   }
@@ -40,13 +41,13 @@ export class SummaryComponent implements OnInit {
     })
   
   }
-  order() {
-    this.router.navigate(['/checkout']);
+  // order() {
+  //   this.router.navigate(['/checkout']);
     
-  }
+  // }
   confirm() {
-    
-    
+    this.cs.checkFlag = true;
+    this.router.navigate(['checkout/order']);
   }
 
   // ids: any;

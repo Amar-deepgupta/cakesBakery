@@ -10,6 +10,9 @@ export class CakeService {
   cakecard: any = cakedatas;
   cakess: any = this.cakecard;
   caked: any;
+  checkFlag: any = false;
+  confirmFlag: any = false;
+  confirmDetails: any = {};
   carousel: any = [
     'assets/craousel1.jpg',
     'assets/craousel2.jpg',
@@ -36,4 +39,6 @@ export class CakeService {
   return false;
   }
   }
+  
 }
+

@@ -1,15 +1,14 @@
 import { HttpClient } from '@angular/common/http';
-import { analyzeAndValidateNgModules } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CakeService } from '../cake.service';
+import { CakeService } from 'src/app/cake.service';
 
 @Component({
-  selector: 'app-orderform',
-  templateUrl: './orderform.component.html',
-  styleUrls: ['./orderform.component.css']
+  selector: 'app-address',
+  templateUrl: './address.component.html',
+  styleUrls: ['./address.component.css']
 })
-export class OrderformComponent implements OnInit {
+export class AddressComponent implements OnInit {
   userdetails: any = {}
   choosecake: any;
   totalprice: any = 0;
@@ -35,15 +34,12 @@ export class OrderformComponent implements OnInit {
      console.log(this.userdetails);
     //  console.log(this.totalprice);
     //this.userdetails = '';
+    this.cs.confirmDetails = { ...this.userdetails };
+    console.log(this.cs.confirmDetails);
     console.log(this.userdetails);
-    this.route.navigate(['checkout/confirm']);
-  this.client.post(this.api + 'addcakeorder',this.userdetails).subscribe((res: any) => {
-    console.log("response from addcakeOrder", res);
-    // this.cs.confirmDetails = { ...this.userdetails };
-    // console.log(this.cs.confirmDetails);
-  }, (error) => {
-    console.log("error from upload api",error)
-      }
-    );
+    this.cs.confirmFlag = "true";
+   this.route.navigate(['checkout/confirm']);
+  
   }
 }
+

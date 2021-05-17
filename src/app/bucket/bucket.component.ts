@@ -44,9 +44,6 @@ export class BucketComponent implements OnInit {
     this.router.navigate(['/checkout']);
     
   }
-  confirm() {
-    
-    
-  }
+
 }
     
