@@ -33,6 +33,7 @@ import { ConfirmComponent } from './confirm/confirm.component';
 import { AddressComponent } from './address/address.component';
 import { GuardService } from './guard.service';
 import { StopguardService } from './stopguard.service';
+import { AddcakeComponent } from './addcake/addcake.component';
 
 
 @NgModule({
@@ -59,7 +60,8 @@ import { StopguardService } from './stopguard.service';
     SummaryComponent,
     CheckoutComponent,
     ConfirmComponent,
-    AddressComponent
+    AddressComponent,
+    AddcakeComponent
   ],
   imports: [
     BrowserModule,

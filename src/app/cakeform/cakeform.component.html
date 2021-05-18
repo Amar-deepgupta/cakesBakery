@@ -1,4 +1,73 @@
-<div class="addlist">
+<div class="container">
+    <form class="row g-2">
+        <div class="col-md-8">
+          <label for="name" class="form-label">Name:</label>
+          <input [(ngModel)]="addvalue.name" type="email" class="form-control" id="name" name="cakename" >
+        </div>
+               
+        <div class="col-8">
+          <label for="description" class="form-label">Description:</label>
+          <input  [(ngModel)]="addvalue.description" name="description" type="text" class="form-control" id="description" placeholder="">
+        </div>
+        <div class="col-md-12">
+          <label for="owner" class="form-label"></label>
+        </div>
+        <div class="col-md-4">
+          <label for="price" class="form-label">Price:</label>
+          <input [(ngModel)]="addvalue.price" name="price"type="text" class="form-control" id="price">
+        </div>
+        <div class="col-md-4">
+          <label for="type" class="form-label">Type:</label>
+          <select [(ngModel)]="addvalue.type" name="type" type="text" class="form-control" id="type">
+            <option [ngValue]="'Birthday cake'">Chocolate cake</option>
+            <option [ngValue]="'Marriage cake'">Marriage Cake</option>
+            <option [ngValue]="'Face cake'">Face Cake</option>
+            <option [ngValue]="'MultiFloor cake'">MultiFloor Cake</option>
+            </select>
+        </div>
+        <div class="col-md-12">
+          <label for="owner" class="form-label"></label>
+        </div>
+        <div class="col-4">
+          <label for="flavour" class="form-label">Flavour:</label>
+          <input [(ngModel)]="addvalue.flavour" name="flavour"type="text" class="form-control" id="flavour" placeholder="">
+        </div>
+        <div class="col-md-4">
+          <label for="weight" class="form-label">Weight:</label>
+          <input [(ngModel)]="addvalue.weight" name="weight" type="text" class="form-control" id="weight">
+        </div>
+        <div class="col-md-12">
+          <label class="form-label" for="indg">Ingredients:</label>
+        </div>
+          <div *ngFor="let ingd of addvalue.ingredients; let i=index"class="col-md-8">
+          <div  class="ingds col-md-4"  >
+            <input [(ngModel)]="ingredients[i]" name="{{ingredients[i]}}{{i}}" type="text" class="form-control" id="ingdr" placeholder=""><button  class="formbtn"><i (click)="ingdDel(i)" class="far fa-trash-alt"></i></button>
+          </div>
+          </div>
+ <span><button (click)="ingAdd()" class="formbtn"><i class="far fa-plus-square"></i></button></span>        
+         <div class="col-12">
+          <div class="form-check">
+            <input  name="eggless" [(ngModel)]="addvalue.eggless" class="form-check-input" type="checkbox" id="eggless" >
+            <label class="form-check-label" for="eggless">
+              Eggless
+            </label>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <label  class="form-label"></label>
+        </div>
+        <span><img [src]="addvalue.image" name="image" class="imgsi"></span>
+        <div class="col-4">         
+        <input (change)="upload($event)" type="file" name="imagefile">
+        </div>
+        <div class="col-12">
+          <button (click)="save()"type="submit" class="btn btn-primary">Add</button>
+        </div>
+      </form>
+</div>
+
+
+<!-- <div class="addlist">
     <h5>Add item</h5>
     <form class="form-style">
         <input name="cake name"  [(ngModel)]="addvalue.name"  placeholder="Enter Cake Name"><br>
@@ -7,13 +76,13 @@
         <input name="cake weight" [(ngModel)]="addvalue.weight" type="text" placeholder="Enter Weight"><br>
         <input name="cake eggless" [(ngModel)]="addvalue.eggless" type="checkbox"><span>Eggless</span><br>
         <input name="cake ingreds" [(ngModel)]="addvalue.ingredients" type="text" placeholder="Enter Ingredients"><br>
-        <select  name="categories" [(ngModel)]="addvalue.categories" >
-            <option value="Birthday cake">Chocolate cake</option>
-            <option value="Vanilla cake">Vanilla Cake</option>
-            <option value="Butterscotch cake">Butterscotch Cake</option>
-            <option value="BlackForest cake">BlackForest Cake</option>
+        <select name="categories" [(ngModel)]="addvalue.categories" >
+            <option [ngValue]="'Birthday cake'">Chocolate cake</option>
+            <option [ngValue]="'Vanilla cake'">Vanilla Cake</option>
+            <option [ngValue]="'Butterscotch cake'">Butterscotch Cake</option>
+            <option [ngValue]="'BlackForest cake'">BlackForest Cake</option>
         </select><br>
         <textarea name="cake describe" [(ngModel)]="addvalue.description" placeholder="Enter Description"></textarea>
         <button (click)="added()" type="button" class="btn">Save</button>
     </form>
-</div>
+</div> -->

@@ -38,14 +38,32 @@ td>.sizes{
 }
 .contain{
     
-    position: absolute;
+    position: relative;
     background-color: rgba(0,0,0,0.8);
     color: var(--gold);
     align-content: center;
     width: 70%;
     left: 20%;
     top: 90px;
-    height: 80vh;
+    height: 60vh;
+}
+.head{
+    position: relative;
+    background-color: rgba(0,0,0,0.3);
+    color: var(--gold);
+    align-content: center;
+    text-align: center;
+    width: 80%;
+    left: 8%;
+    top: 20px;
+    height: 5vh;
+    display:grid;
+    grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr;
+}
+.head>p{
+    position: inherit;
+    top:5px;
+
 }
 .hidden{
     display: none

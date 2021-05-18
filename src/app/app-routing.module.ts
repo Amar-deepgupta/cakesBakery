@@ -17,11 +17,12 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { ConfirmComponent } from './confirm/confirm.component';
 import { GuardService } from './guard.service';
 import { StopguardService } from './stopguard.service';
+import { AddcakeComponent } from './addcake/addcake.component';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'addcake', component: CakeformComponent },
+  // { path: 'addcake', component: CakeformComponent },
   { path: 'login', component: LoginComponent,canActivate:[GuardService]},
   { path: 'signup', component: SignupComponent },
   { path: 'forgot', component: ForgetpasswordComponent },
@@ -31,7 +32,8 @@ const routes: Routes = [
   { path:'cakeorders',component:MyodersComponent},
   { path: 'order', component: OrderformComponent},
    //{path:'summary',component:SummaryComponent},
-  { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
+  {
+    path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
   {path: 'checkout', component: CheckoutComponent, children: [
       {
         path:'',component:SummaryComponent
@@ -40,7 +42,8 @@ const routes: Routes = [
       {
       path:'confirm',component:ConfirmComponent
     }]
-  }
+  },
+  
 ];
 
 
