@@ -3,13 +3,14 @@ import { analyzeAndValidateNgModules } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CakeService } from '../cake.service';
+import { CanComponentDeactivate} from '../stopguard.service';
 
 @Component({
   selector: 'app-orderform',
   templateUrl: './orderform.component.html',
   styleUrls: ['./orderform.component.css']
 })
-export class OrderformComponent implements OnInit {
+export class OrderformComponent implements CanComponentDeactivate {
   userdetails: any = {}
   choosecake: any;
   totalprice: any = 0;
@@ -45,5 +46,19 @@ export class OrderformComponent implements OnInit {
     console.log("error from upload api",error)
       }
     );
+  }
+  cancel() {
+    this.route.navigate(['']);
+  }
+
+  canDeactivate() {
+    console.log('i am navigating away');
+
+    // if the editName !== this.user.name
+    if (!this.userdetails.name || !this.userdetails.address) {
+      return window.confirm("You don't fill all the fields");
+    }
+
+    return true;
   }
 }

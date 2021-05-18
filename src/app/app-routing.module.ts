@@ -15,26 +15,28 @@ import { MyodersComponent } from './myoders/myoders.component';
 import { SummaryComponent } from './summary/summary.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ConfirmComponent } from './confirm/confirm.component';
+import { GuardService } from './guard.service';
+import { StopguardService } from './stopguard.service';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'addcake', component: CakeformComponent },
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginComponent,canActivate:[GuardService]},
   { path: 'signup', component: SignupComponent },
   { path: 'forgot', component: ForgetpasswordComponent },
   { path: 'search', component: SearchpageComponent },
   { path: 'cake/:id', component: CakeDetailsComponent },
-  { path: 'cart', component: BucketComponent },
+  { path: 'cart', component: BucketComponent, canActivate:[GuardService] },
   { path:'cakeorders',component:MyodersComponent},
-  { path: 'order', component: OrderformComponent },
+  { path: 'order', component: OrderformComponent},
    //{path:'summary',component:SummaryComponent},
   { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
   {path: 'checkout', component: CheckoutComponent, children: [
       {
         path:'',component:SummaryComponent
       },
-      { path: 'order', component: OrderformComponent },
+      { path: 'order', component: OrderformComponent,canDeactivate:[StopguardService]  },
       {
       path:'confirm',component:ConfirmComponent
     }]

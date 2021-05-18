@@ -31,6 +31,8 @@ import { SummaryComponent } from './summary/summary.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ConfirmComponent } from './confirm/confirm.component';
 import { AddressComponent } from './address/address.component';
+import { GuardService } from './guard.service';
+import { StopguardService } from './stopguard.service';
 
 
 @NgModule({
@@ -73,7 +75,7 @@ import { AddressComponent } from './address/address.component';
     provide: HTTP_INTERCEPTORS,
     useClass: AutheninterceptorService,
     multi:true
-  }],
+  },GuardService,StopguardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
