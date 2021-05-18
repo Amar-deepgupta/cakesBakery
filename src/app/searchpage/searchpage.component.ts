@@ -52,9 +52,10 @@ export class SearchpageComponent implements OnInit {
 
   filters() {
     if (!this.min && !this.max) {
+      this.toast.warning(this.message, "Can't search empty with value", { timeOut: 2000, positionClass: 'toast-top-center' });
       this.cakesort = this.cakedata;
     }
-    if ((this.min || this.max) && this.max>this.min) {
+    if (this.min || this.max)  {
       this.cakesort = this.cakedata.filter(
         (fil: any) =>
           (this.min ? fil.price >= this.min : true) &&
@@ -62,8 +63,10 @@ export class SearchpageComponent implements OnInit {
       );
       console.log(this.cakesort);
     }
-    else {
-      // this.toast.warning(this.message, 'Searching a wrong way ',{timeOut:2000,positionClass:centr});
-    }
+    if(this.min>this.max)
+     {
+      this.toast.warning(this.message, 'Searching a wrong way ', { timeOut: 2000, positionClass: 'toast-top-center' });
+      this.cakesort = this.cakedata;
+     }
   }
 }
