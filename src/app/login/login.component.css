@@ -257,4 +257,39 @@ html {
   #icon {
     width:60%;
   }
+  .my-overlay {
+    left: 0 !important;
+    top: 0 !important;
+    z-index: 10000 !important;
+    width: 100% !important;
+    height: 100% !important;
+    position: fixed !important;
+    background-color: rgba(0,0,0,0.9) !important;
+    cursor: pointer !important;
+    visibility: visible !important;
+    transition: visibility 0s, opacity 2s linear !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: wait !important;
+     
+}
+.my-overlay i.fa.fa-circle-notch.fa-spin, .spinner-big {
+    font-size: 100px !important;
+}
+  .loader {
+    
+    border: 16px solid transparent;
+  border-radius: 50%;
+  border-top: 16px solid #ffdead;
+  border-bottom: 16px solid #ffdead;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  }
   
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

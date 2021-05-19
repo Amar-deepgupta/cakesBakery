@@ -11,6 +11,7 @@ export class CakecardComponent implements OnInit {
   cakecards: any = this.cakes.cakess;
   data: any;
   flag: any = false;
+  showOverlay: any = true;
   constructor(
     public cakes: CakeService,
     private rout: Router,
@@ -22,6 +23,7 @@ export class CakecardComponent implements OnInit {
         console.log('response from allcakes', response);
         this.data = response.data;
         console.log(this.data);
+        this.showOverlay=false
       },
       (error) => {
         if (error.statusText="Not Found") {

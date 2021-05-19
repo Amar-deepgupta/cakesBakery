@@ -11,6 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class LoginComponent implements OnInit {
   users: any = {};
+  showOverlay: any = true;
 
   constructor(
     private check: CakeService,
@@ -42,7 +43,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('email', response.email);
           localStorage.setItem('password', this.users.password);
            localStorage.setItem('token', response.token);
-
+          this.showOverlay = false;
           this.route.navigate(['/']);
         } else {
           return;

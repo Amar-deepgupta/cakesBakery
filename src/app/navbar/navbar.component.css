@@ -2,12 +2,14 @@
     display: grid;
     grid-template-columns: 0.1fr 2fr 1fr;
     gap:0 15vw;
-    background-color:rgb(0,0,0,0.8);
+    background-color:rgb(0,0,0,1);
     
     height:50px;
 }
 .navbar-brand{
     color:whitesmoke;
+    font-family: Great Vibes;
+    font-size: 2.25em;
 }
 .btn-outline-success{
     border: 1px solid var(--gold);
@@ -42,6 +44,7 @@ color:black;
     width: 30px;
     height: 30px;
     color:whitesmoke;
+    
 }
 .carts:hover,.admin:hover{
     color:var(--gold);
@@ -52,7 +55,7 @@ color:black;
     position: relative;
     top:0;
     background-color:transparent;
-    border:none;
+    border:1px solid;
     width: 6vw;
     height:5vh;
     color:var(--gold)
@@ -60,6 +63,7 @@ color:black;
 }
 .order{
     right:4vw;
+    border-radius: 3px;
    
 }
 .order:hover,.btn-primary:hover{

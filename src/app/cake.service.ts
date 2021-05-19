@@ -15,6 +15,7 @@ export class CakeService {
   confirmFlag: any = false;
   confirmDetails: any = {};
   userdetail: any = {}
+  
   carousel: any = [
     'assets/craousel1.jpg',
     'assets/craousel2.jpg',
