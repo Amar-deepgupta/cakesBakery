@@ -1,8 +1,10 @@
 <div class="left">
-    <li (click)='summary()'>Summary</li>
+    <li (click)='summary()' id="summry">Summary</li>
+    <hr>
     <li *ngIf="cs.checkFlag" (click)="address()" id="order">Address</li>
     <li  *ngIf="!cs.checkFlag" >Address</li>
-    <li *ngIf="cs.confirmFlag" (click)="confirm()" id="order">Confirmation</li>
+    <hr>
+    <li  *ngIf="cs.confirmFlag" (click)="confirm()" id="confirm">Confirmation</li>
     <li  *ngIf="!cs.confirmFlag" >Confirmation</li>
    
     

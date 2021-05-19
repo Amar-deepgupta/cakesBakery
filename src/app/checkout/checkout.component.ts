@@ -9,20 +9,25 @@ import { CakeService } from '../cake.service';
 })
 export class CheckoutComponent implements OnInit {
   flag: any = false;
-  constructor(private route: Router, public cs: CakeService) { }
+  constructor(private route: Router, public cs: CakeService) {
+    
+   }
 
   ngOnInit(): void {
   }
   summary() {
     this.route.navigate(['/checkout'])
+     
   }
   confirm() {
     this.route.navigate(['checkout/confirm'])
   }
   address() {
     this.route.navigate(['checkout/order']);
-  }
+    }
   orderplaced() {
-    this.route.navigate(['/myorders'])
+    this.route.navigate(['/myorders']);
+   
   }
+
 }

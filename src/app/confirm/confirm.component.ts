@@ -9,13 +9,22 @@ import { CakeService } from '../cake.service';
   styleUrls: ['./confirm.component.css']
 })
 export class ConfirmComponent implements OnInit {
-
-  constructor(public cs: CakeService,private route:Router){}
+  api = 'https://apifromashu.herokuapp.com/api/';
+  constructor(public cs: CakeService,private route:Router,private client:HttpClient){}
 
   ngOnInit(): void {
   }
-  placeorder() {
+  finalize() {
+    this.client.post(this.api + 'addcakeorder',this.cs.userdetail).subscribe((res: any) => {
+      console.log("response from addcakeOrder", res);
+       this.cs.confirmDetails = { ...this.cs.userdetail,...this.cs.userdetail.cakes };
+       console.log(this.cs.confirmDetails);
+    }, (error) => {
+      console.log("error from upload api",error)
+        }
+      );
     this.route.navigate(['/cakeorders']);
+    
   
 }
 }

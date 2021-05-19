@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { cakedatas } from '../cakedata';
 
@@ -13,6 +14,7 @@ export class CakeService {
   checkFlag: any = false;
   confirmFlag: any = false;
   confirmDetails: any = {};
+  userdetail: any = {}
   carousel: any = [
     'assets/craousel1.jpg',
     'assets/craousel2.jpg',
@@ -22,7 +24,7 @@ export class CakeService {
     
   ];
   userdetails: any = [];
-  constructor() { }
+  constructor(private client:HttpClient) { }
   ValidateEmail(inputText:any)
   {
   var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -39,6 +41,19 @@ export class CakeService {
   return false;
   }
   }
+  
+  // api = 'https://apifromashu.herokuapp.com/api/';
+  
+  //   this.client.post(this.api + 'cakecart', {}).subscribe((res: any) => {
+  //     console.log("response from cakescart", res)
+  //     this.userdetail.cakes = [...res.data];
+  //     this.userdetail.price=(this.userdetail.cakes.reduce((acc:any,e: any) => e.price * e.quantity+acc,0))
+      
+      
+  //   }, (error) => {
+  //     console.log("error from cakescart", error)
+  //   }
+  //   );
   
 }
 

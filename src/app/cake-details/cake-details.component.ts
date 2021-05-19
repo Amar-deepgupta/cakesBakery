@@ -36,28 +36,36 @@ export class CakeDetailsComponent implements OnInit {
   
   ngOnInit(): void {
   }
+ 
+  
   add() {
-    var api = 'https://apifromashu.herokuapp.com/api/addcaketocart';
-    this.client.post(api, this.cake).subscribe((response) => {
-      console.log("add cake to cart response",response)
-      
-    }, (error) => {
-      
-      console.log("add cake to cart error",error)
-    })
-
-
     if (!localStorage.getItem("email")) {
       this.toast.warning("Please Login First", "Warning");
       setTimeout(() => {
         this.router.navigate(['/login']);  
-      },5000)
+      }, 3000)
+      return;
+  }
+  var api = 'https://apifromashu.herokuapp.com/api/addcaketocart';
+  this.client.post(api, this.cake).subscribe((response:any) => {
+    console.log("add cake to cart response", response)
+    if (response.message === "Added to cart") {
+      this.toast.success("Cake Added to cart", "", { timeOut: 2000, positionClass:'toast-top-center'});
     }
+      
+  }, (error) => {
+      
+    console.log("add cake to cart error", error)
+  })
+}
+
+
+   
     // if (localStorage.getItem("email")) {
     //   
     //   console.log(cake);
     // }
-  }
+  
 //   upload(event: any) {
 //     if (event.target.files.length == 0) {
 //       console.log("No file selected!");

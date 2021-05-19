@@ -16,7 +16,7 @@ export class MyodersComponent implements OnInit {
   api = 'https://apifromashu.herokuapp.com/api/';
   constructor(private client: HttpClient,private htmlRef:ElementRef,private route:Router) {
     this.client.post(this.api + 'cakeorders',{}).subscribe((res: any) => {
-      // console.log("response from cakescart", res)
+       console.log("response from cakescart", res)
       this.order = res.cakeorders;
       // console.log(this.order);
      this.order.forEach((e: any) => {

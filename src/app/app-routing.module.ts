@@ -29,7 +29,7 @@ const routes: Routes = [
   { path: 'search', component: SearchpageComponent },
   { path: 'cake/:id', component: CakeDetailsComponent },
   { path: 'cart', component: BucketComponent, canActivate:[GuardService] },
-  { path:'cakeorders',component:MyodersComponent},
+  { path:'cakeorders',component:MyodersComponent,canActivate:[GuardService]},
   { path: 'order', component: OrderformComponent},
    //{path:'summary',component:SummaryComponent},
   {
@@ -38,9 +38,9 @@ const routes: Routes = [
       {
         path:'',component:SummaryComponent
       },
-      { path: 'order', component: OrderformComponent,canDeactivate:[StopguardService]  },
+      { path: 'order', component: OrderformComponent,canDeactivate:[StopguardService],canActivate:[GuardService]  },
       {
-      path:'confirm',component:ConfirmComponent
+      path:'confirm',component:ConfirmComponent,canActivate:[GuardService]
     }]
   },
   

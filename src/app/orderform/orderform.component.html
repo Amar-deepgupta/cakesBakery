@@ -7,11 +7,11 @@
   
       <!-- Order Form -->
       <form action="submit">
-        <input [(ngModel)]="userdetails.name" type="text" id="name" class="fadeIn second" name="name" placeholder="Name" autocomplete="off">
-        <input  [(ngModel)]="userdetails.address"type="text" id="address" class="fadeIn third" name="address" placeholder="Address"autocomplete="off">
-        <input  [(ngModel)]="userdetails.phone"type="text" id="phone" class="fadeIn third" name="phone" placeholder="Phone Number"autocomplete="off">
-        <input  [(ngModel)]="userdetails.city"type="text" id="city" class="fadeIn third" name="city" placeholder="City"autocomplete="off">
-        <input  [(ngModel)]="userdetails.pincode"type="text" id="pin" class="fadeIn third" name="pin" placeholder="Pin code"autocomplete="off">
+        <input [(ngModel)]="cs.userdetail.name" type="text" id="name" class="fadeIn second" name="name" placeholder="Name" autocomplete="off">
+        <input  [(ngModel)]="cs.userdetail.address"type="text" id="address" class="fadeIn third" name="address" placeholder="Address"autocomplete="off">
+        <input  [(ngModel)]="cs.userdetail.phone"type="text" id="phone" class="fadeIn third" name="phone" placeholder="Phone Number"autocomplete="off">
+        <input  [(ngModel)]="cs.userdetail.city"type="text" id="city" class="fadeIn third" name="city" placeholder="City"autocomplete="off">
+        <input  [(ngModel)]="cs.userdetail.pincode"type="text" id="pin" class="fadeIn third" name="pin" placeholder="Pin code"autocomplete="off">
         <input type="submit" class="fadeIn fourth" value="Order" (click)="placeorder()">
       </form>
      
