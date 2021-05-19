@@ -49,10 +49,16 @@ export class CakeformComponent implements OnInit {
     this.ingredients = { ...this.addvalue.ingredients };
   }
   save() {
+    if (!this.addvalue.name && !this.addvalue.description && !this.addvalue.price && !this.addvalue.type && !this.addvalue.flavour && !this.addvalue.weight && !this.addvalue.ingredients && !this.addvalue.image)
+    {
+      alert("all fields should be fill");
+      return;
+    }
+    
     console.log("the enter data is:", this.addvalue);
-    this.client.post(this.api +'addcake',this.addvalue).subscribe((res: any) => {
-      console.log("response from cake add api", res)
-      
+      this.client.post(this.api + 'addcake', this.addvalue).subscribe((res: any) => {
+        console.log("response from cake add api", res)
+    
     }, (error) => {
       console.log("error from upload api",error)
         }

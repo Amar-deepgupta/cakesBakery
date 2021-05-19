@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class MyodersComponent implements OnInit {
   ids: any;
+  toggle: any = true;
   order: any = [];
   orderDetails:any=[]
   api = 'https://apifromashu.herokuapp.com/api/';
@@ -29,10 +30,14 @@ export class MyodersComponent implements OnInit {
     );
   }
   details(id: any) {
-    document.querySelector(`#cake${id}`)?.classList.toggle('hidden');
-    console.log(this.order);
-    
-    }
+    this.toggle = false;
+    document.querySelector(`#cake${id}`)?.classList.remove('hidden');
+    console.log(id);
+  }
+  hide(id:any) {
+    this.toggle = true;
+    document.querySelector(`#cake${id}`)?.classList.add('hidden');
+  }
 //   summary() {
 //      this.route.navigate(['/cakeorders'])
 // }
