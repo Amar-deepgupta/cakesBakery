@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-myoders',
@@ -14,14 +14,15 @@ export class MyodersComponent implements OnInit {
   order: any = [];
   orderDetails:any=[]
   api = 'https://apifromashu.herokuapp.com/api/';
-  constructor(private client: HttpClient,private htmlRef:ElementRef,private route:Router) {
+  constructor(private client: HttpClient,private htmlRef:ElementRef,private route:Router,private activate:ActivatedRoute) {
+    
     this.client.post(this.api + 'cakeorders',{}).subscribe((res: any) => {
        console.log("response from cakescart", res)
       this.order = res.cakeorders;
-      // console.log(this.order);
+      console.log(this.order);
      this.order.forEach((e: any) => {
        const dt = new Date(e.orderdate)
-       console.log(dt);
+        console.log(dt);
       e.orderdate=`${dt.getDate()}-${dt.getMonth()+1}-${dt.getFullYear()}`});
        
     }, (error) => {

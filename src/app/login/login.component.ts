@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
 
     this.client.post(apiurl, this.users).subscribe(
       (response: any) => {
-        console.log('response from signup api', response);
+        console.log('response from login api', response);
         this.message = response.message;
         
        

@@ -6,21 +6,22 @@
     left: 40px;
     top: 10px;
     margin: 5% 10px;
-    max-height: 15vh;
+    max-height: 8vh;
+    width:cover
 }
 .card{
     margin: 10px 10px;
     position: relative;
     left:20px;
-    height:70vh;
-    background-color: rgba(0,0,0,0.99);
+    height:45vh;
+    background-color:aliceblue;
  }
  .card-img-top{
-     max-width:100%;
+     width:cover;
      height:50%;
  }
  .card-title,.card-text{
-     color:var(--gold);
+     color:black
  }
 
 .error{

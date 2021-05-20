@@ -1,9 +1,10 @@
 .carousel-inner{
-    max-height: 500px;
+    max-height: cover;
+    width:cover;
 }
 img{
-    width:400px;
-    height:400px;
+    width:cover;
+    height:50vh;
 }
 .carousel-control-next,.carousel-control-prev{
     width:5%;

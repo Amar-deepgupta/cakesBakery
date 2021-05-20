@@ -1,39 +1,44 @@
 .container{
     position:relative;
     top:10vh;
-    left:0vw;
+    right:100px;
     display: flex;
     flex-direction: row;
-    height:80vh;
-    width: 60vw;
-    background-color: rgba(0,0,0,0.8);
-    color:var(--gold);
-    overflow: auto;
+    height:max-content;
+
+    width: 60%;
+    background-color:aliceblue;
+    color:black;
+    /* overflow:auto; */
     
 }
 
 .details{
     position: relative;
-    left:15vw;
+    left:20vw;
     text-align: center;
     display:grid;
     grid-template-rows: repeat(6,1fr);
     height:30px;
+    
     top:2vh;
     
 }
 .cartbtn{
-    position: relative;
-    top:10vh;
+    position:relative;
+    top:60vh;
     display: flex;
     flex-direction: row;
     gap: 20px;
+    right:0vw;
     
 
 }
 button{
     width:8vw;
     height:5vh;
+    background-color: black;
+    color:aliceblue;
 }
 .imag{
     position: relative;

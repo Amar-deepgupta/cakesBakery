@@ -39,7 +39,7 @@ export class NavbarComponent implements OnInit {
     }
   }
   logout() {
-    localStorage.removeItem("email")
+    localStorage.removeItem("token")
     this.rout.navigate(['/login'])
     this.flag = true;
     this.adminflag = false;

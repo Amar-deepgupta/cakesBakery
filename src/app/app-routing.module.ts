@@ -18,20 +18,21 @@ import { ConfirmComponent } from './confirm/confirm.component';
 import { GuardService } from './guard.service';
 import { StopguardService } from './stopguard.service';
 import { AddcakeComponent } from './addcake/addcake.component';
+import { CakeResolverService } from './cake-resolver.service';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  // { path: 'addcake', component: CakeformComponent },
-  { path: 'login', component: LoginComponent,canActivate:[GuardService]},
+
+  { path: 'login', component: LoginComponent, canActivate: [GuardService] },
   { path: 'signup', component: SignupComponent },
   { path: 'forgot', component: ForgetpasswordComponent },
   { path: 'search', component: SearchpageComponent },
   { path: 'cake/:id', component: CakeDetailsComponent },
-  { path: 'cart', component: BucketComponent, canActivate:[GuardService] },
-  { path:'cakeorders',component:MyodersComponent,canActivate:[GuardService]},
+  { path: 'cart', component: BucketComponent, canActivate: [GuardService], resolve: [ CakeResolverService ]},
+  { path: 'cakeorders', component: MyodersComponent, canActivate: [GuardService] },
   { path: 'order', component: OrderformComponent},
-   //{path:'summary',component:SummaryComponent},
+ 
   {
     path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
   {path: 'checkout', component: CheckoutComponent, children: [
@@ -49,7 +50,8 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers:[CakeResolverService]
 })
 export class AppRoutingModule {}
 

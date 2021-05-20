@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CakeService } from '../cake.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-cakecard',
@@ -16,6 +16,7 @@ export class CakecardComponent implements OnInit {
     public cakes: CakeService,
     private rout: Router,
     private client: HttpClient
+    
   ) {
     var apiurl = 'https://apifromashu.herokuapp.com/api/allcakes';
     this.client.get(apiurl).subscribe(
@@ -34,7 +35,10 @@ export class CakecardComponent implements OnInit {
     );
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    
+
+  }
   cakedetail(i: any) {
     this.rout.navigate(['/cake', this.data[i].cakeid]);
      console.log(this.data[i].cakeid);

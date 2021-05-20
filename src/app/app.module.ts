@@ -34,6 +34,7 @@ import { AddressComponent } from './address/address.component';
 import { GuardService } from './guard.service';
 import { StopguardService } from './stopguard.service';
 import { AddcakeComponent } from './addcake/addcake.component';
+import { AddedPipe } from './added.pipe';
 
 
 @NgModule({
@@ -61,7 +62,8 @@ import { AddcakeComponent } from './addcake/addcake.component';
     CheckoutComponent,
     ConfirmComponent,
     AddressComponent,
-    AddcakeComponent
+    AddcakeComponent,
+    AddedPipe
   ],
   imports: [
     BrowserModule,
