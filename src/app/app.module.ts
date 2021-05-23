@@ -33,7 +33,6 @@ import { ConfirmComponent } from './confirm/confirm.component';
 import { AddressComponent } from './address/address.component';
 import { GuardService } from './guard.service';
 import { StopguardService } from './stopguard.service';
-import { AddcakeComponent } from './addcake/addcake.component';
 import { AddedPipe } from './added.pipe';
 
 
@@ -62,7 +61,6 @@ import { AddedPipe } from './added.pipe';
     CheckoutComponent,
     ConfirmComponent,
     AddressComponent,
-    AddcakeComponent,
     AddedPipe
   ],
   imports: [

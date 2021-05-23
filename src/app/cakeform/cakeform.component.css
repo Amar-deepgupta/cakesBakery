@@ -3,25 +3,25 @@
     left:0vw;
 }
 .container{
-    border: 1px solid #aaa;
+    border: 1px solid black;
     width:60vw;
     height:120vh;
     position: relative;
     top:20px;
-    background-color: rgba(6,6,6,0.8);
-    color:var(--gold);
+    background-color: transparent;
+    color:black;
 }
 .row {
     position: relative;
     left:10vw;
     top:20px;
 }
-input{
+input,select{
     border:none;
     transition: ease-in;
     animation: ease-in 2s  1s  right line;
-    background-color: rgba(a,a,a,0.8);
-    border:1px solid var(--gold);
+    background-color: aliceblue;
+    border:1px solid black;
 }
 .imgsi{
     min-width:100px;
@@ -32,6 +32,9 @@ input{
     margin-top:10px;
     width:10vw;
     height:7vh;
+    background-color: transparent;
+    color:black;
+    border: 1px solid black;
 }
 .formbtn{
     width:2vw;

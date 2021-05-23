@@ -16,6 +16,7 @@ export class CakeformComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  //upload an image/file;
   upload(event: any) {
     if (event.target.files.length === 0) {
       console.log("No file selected!");
@@ -24,10 +25,7 @@ export class CakeformComponent implements OnInit {
   let file: File = event.target.files[0];
   var formData = new FormData();
   formData.append('file', file);
-    console.log(formData);
-  
-  // this.files.inProgress = true;
-  
+    console.log(formData);  
   this.client.post(this.api +'upload',formData).subscribe((res: any) => {
     console.log("response from upload api", res)
     this.addvalue.image = res.imageUrl;
@@ -48,6 +46,7 @@ export class CakeformComponent implements OnInit {
     this.addvalue.ingredients.push('');
     this.ingredients = { ...this.addvalue.ingredients };
   }
+  // save the details and add cake to data
   save() {
     if (!this.addvalue.name && !this.addvalue.description && !this.addvalue.price && !this.addvalue.type && !this.addvalue.flavour && !this.addvalue.weight && !this.addvalue.ingredients && !this.addvalue.image)
     {

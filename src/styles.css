@@ -84,7 +84,7 @@ input{
    height:50%;
 }
 .card-title,.card-text{
-   color:var(--gold);
+   color:black;
 }
 .fa-shopping-cart{
   width:20px;
@@ -93,13 +93,13 @@ input{
 }
 button{
   background-color: transparent;
-  border:1px solid var(--gold);
-  color:var(--gold);
+  border:1px solid black;
+  color:black;
 }
 button:hover{
-  background-color: var(--gold);
-  border:1px solid var(--gold);
-  color:black;
+  background-color: black;
+  border:1px solid black;
+  color:aliceblue;
 }
 #search,.form-control{
   background-color: rgba(0,0,0,0.8);
@@ -109,15 +109,18 @@ button:hover{
 table{
   margin-top:20px;
 }
-
-thead,tr{
-  background-color: rgba(0,0,0,0.8);
-  border:1px solid var(--gold);
-  color:var(--gold);
+thead{
+  border-radius: 2px;
 }
+thead,tr{
+  background-color: transparent;
+  /* border:1px solid var(--gold); */
+  color:black;
+}
+
 tr:hover{
-  
-  color:var(--gold)!important;
+
+  color:black;
 } 
 .toast-center-center {
     top: 50%;

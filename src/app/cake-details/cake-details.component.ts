@@ -34,12 +34,8 @@ export class CakeDetailsComponent implements OnInit {
   );    
   }
   
-  ngOnInit(): void {
-    
-    
-  }
- 
-  
+  ngOnInit(): void { }
+  // add cake to cart
   add() {
     if (!localStorage.getItem("email")) {
       this.toast.warning("Please Login First", "Warning");
@@ -60,32 +56,4 @@ export class CakeDetailsComponent implements OnInit {
     console.log("add cake to cart error", error)
   })
 }
-
-
-   
-    // if (localStorage.getItem("email")) {
-    //   
-    //   console.log(cake);
-    // }
-  
-//   upload(event: any) {
-//     if (event.target.files.length == 0) {
-//       console.log("No file selected!");
-//       return
-//    }
-//   let file: File = event.target.files[0];
-//   var formData = new FormData();
-//   formData.append('file', file);
-//     console.log(formData);
-  
-//   // this.files.inProgress = true;
-//   var api = 'https://apifromashu.herokuapp.com/api/upload';
-//   this.client.post(api,formData).subscribe((res: any) => {
-//     console.log("response from upload api", res)
-//     this.imgurl=res.imageUrl;
-//   }, (error) => {
-//     console.log("error from upload api",error)
-//       }
-//     );
-// }
 }

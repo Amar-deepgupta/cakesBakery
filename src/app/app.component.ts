@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'cakeproject';
+  title = 'cakeBakery';
 
   constructor(private http: HttpClient) {
     this.http.get('https://apifromashu.herokuapp.com/api/getuserdetails').subscribe((res: any) => {

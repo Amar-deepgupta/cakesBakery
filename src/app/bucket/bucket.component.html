@@ -1,4 +1,10 @@
-<div>
+<div class="cart"  *ngIf="emptyFlag">
+  <div class='searcherror'><img src='../../assets/shopping-cart.png'>
+    <p>Want to add cake in your cart<a routerLink='/'>Click Here</a></p>
+  </div>
+  
+</div>
+<div *ngIf="!emptyFlag">
     <table class="table table-hover">
         <thead>
           <tr>

@@ -5,10 +5,10 @@
     position: relative;
     top:0;
     left:20vw;
-    color:#ffdead;
+    color:black;
     flex-direction: column;
     border:1px solid #000;
-    background-color: rgba(0,0,0,0.8);
+    background-color: transparent;
 }
 .btn-primary{
     width:15vw;
@@ -16,6 +16,8 @@
 position: relative;
 left:40vh;
 top:10px;
+background-color: black;
+color: aliceblue;
 }
 p{
     position: relative;

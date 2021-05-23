@@ -8,7 +8,7 @@ html {
   }
   
   a {
-    color: #fff;
+    color: black;
     display:inline-block;
     text-decoration: none;
     font-weight: 400;
@@ -36,26 +36,30 @@ html {
     width: 100%;
     min-height: 100%;
     padding: 20px;
+    margin-top:15vh;
   }
   
   #formContent {
     -webkit-border-radius: 10px 10px 10px 10px;
     border-radius: 10px 10px 10px 10px;
-    background: black;
+    background: aliceblue;
     padding: 30px;
     width: 90%;
     max-width: 450px;
     position: relative;
-    padding: 0px;
+   
     -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
     box-shadow: 0 30px 60px 0 rgba(0,0,0,0.7);
     text-align: center;
+    color:black;
+    
     
   }
   
   #formFooter {
-    background-color: black;
-    border-top: 1px solid #ffdead;
+    
+    background-color:aliceblue;
+    border-top: 1px solid black;
     padding: 25px;
     text-align: center;
     -webkit-border-radius: 0 0 10px 10px;
@@ -71,8 +75,8 @@ html {
   }
   
   h2.active {
-    color: #0d0d0d;
-    border-bottom: 2px solid #5fbae9;
+    color: aliceblue;
+    border-bottom: 2px solid black;
   }
   
   
@@ -80,9 +84,10 @@ html {
   /* FORM TYPOGRAPHY*/
   
   input[type=button], input[type=submit], input[type=reset]  {
-    background-color: #ffdead;
+    
+    background-color: black;
     border: none;
-    color: black;
+    color: aliceblue;
     padding: 15px 80px;
     text-align: center;
     text-decoration: none;
@@ -90,7 +95,7 @@ html {
     text-transform: uppercase;
     font-size: 13px;
     -webkit-box-shadow: 0 10px 30px 0 rgba(255, 222, 173,0.4);
-    box-shadow: 0 10px 30px 0 rgba(255, 222, 173,0.4);
+    box-shadow: 0 10px 30px 0 rgba(0, 0, 0,0.4);
     -webkit-border-radius: 5px 5px 5px 5px;
     border-radius: 5px 5px 5px 5px;
     margin: 5px 20px 40px 20px;
@@ -103,7 +108,7 @@ html {
   
   input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
     background-color: black;
-    color:#ffdead;
+    color:aliceblue;
   }
   
   input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
@@ -115,9 +120,9 @@ html {
   }
   
   input[type=text], input[type=password]{
-    background-color: #0d0d0d;
+    background-color: transparent;
     border: none;
-    color: #FFdead;
+    color: aliceblue;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -125,7 +130,7 @@ html {
     font-size: 16px;
     margin: 5px;
     width: 85%;
-    border: 2px solid #ffdead;
+    border: 2px solid black;
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     -ms-transition: all 0.5s ease-in-out;
@@ -141,7 +146,7 @@ html {
   }
   
   input[type=text]:placeholder {
-    color: #ffdead;
+    color: black;
   }
   
   
@@ -235,13 +240,13 @@ html {
     bottom: -10px;
     width: 0;
     height: 2px;
-    background-color: #ffdead;
+    background-color: black;
     content: "";
     transition: width 0.2s;
   }
   
   .underlineHover:hover {
-    color: #ffdead;
+    color: black;
   }
   
   .underlineHover:hover:after{

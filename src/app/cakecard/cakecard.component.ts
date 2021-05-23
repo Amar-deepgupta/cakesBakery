@@ -35,10 +35,7 @@ export class CakecardComponent implements OnInit {
     );
   }
 
-  ngOnInit(): void {
-    
-
-  }
+  ngOnInit(): void { }
   cakedetail(i: any) {
     this.rout.navigate(['/cake', this.data[i].cakeid]);
      console.log(this.data[i].cakeid);

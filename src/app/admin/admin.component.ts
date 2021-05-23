@@ -8,14 +8,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
+  // variable declaration
   choosecake: any = {};
   api = 'https://apifromashu.herokuapp.com/api/';
   constructor(private client:HttpClient,private router:Router) {
+    //showing data while the compontent is loading
     this.showing()
    }
 
   ngOnInit(): void {
   }
+  //function hit Api and collect the data 
   showing() {
     this.client.get(this.api+'allcakes').subscribe((res: any) => {
       console.log("response from cakescart", res)
@@ -26,6 +29,7 @@ export class AdminComponent implements OnInit {
     }
     );
   }
+  // navigate to edit form component
   editform(i:any) {
     this.router.navigate(['/admin/editform', i]);
   }

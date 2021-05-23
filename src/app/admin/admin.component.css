@@ -20,10 +20,13 @@ table{
 .addbtn{
     width:7vw;
     height:6vh;
-    border-radius: 2px;
-    background-color: #ffdead;
+    border-radius: 3px;
+    background-color: transparent;
     color:black;
 }
 .fa-plus-square{
     font-size: 1.0em;
+}
+tr:hover{
+    box-shadow: 2px 2px 2px 2px;
 }

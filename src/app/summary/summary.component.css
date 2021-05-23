@@ -39,8 +39,8 @@
 .contain{
     
     position: absolute;
-    background-color: rgba(0,0,0,0.8);
-    color: var(--gold);
+    background-color:transparent;
+    color: black;
     align-content: center;
     width: 70%;
     left: 20%;
@@ -97,13 +97,13 @@ table{
     
 }
 thead,tr{
-    background-color: rgba(0,0,0,0.8);
-    border:1px solid navajowhite;
-    color:var(--gold);
+    background-color: transparent;
+    border:1px solid black;
+    color:black;
 }
  tr:hover{
     
-    color:var(--gold)!important;
+    color:black;
 } 
 @media all and (min-width: 241px) and (max-width: 480px){
     table{

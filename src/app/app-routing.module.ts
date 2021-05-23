@@ -17,7 +17,6 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { ConfirmComponent } from './confirm/confirm.component';
 import { GuardService } from './guard.service';
 import { StopguardService } from './stopguard.service';
-import { AddcakeComponent } from './addcake/addcake.component';
 import { CakeResolverService } from './cake-resolver.service';
 
 

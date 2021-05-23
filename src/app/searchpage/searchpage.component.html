@@ -1,9 +1,13 @@
 
 <div class= "filter">
-    <input [(ngModel)]="min" type="text" name="minValue" class="box" autocomplete="off">
-    <input [(ngModel)]="max" type="text" name="maxValue" class="box" autocomplete="off">
+    <input [(ngModel)]="min" type="text" name="minValue" class="box" autocomplete="off" placeholder="min">
+    <input [(ngModel)]="max" type="text" name="maxValue" class="box" autocomplete="off" placeholder="max">
     <button type="submit"  class="sort" (click)="filters()" >Filter</button>
 
+</div>
+<div class="cart"  *ngIf="flag">
+  <div class='searcherror'><img src='../../assets/no_results_found.jpg'>
+  </div>
 </div>
 <div class="cart">
     <div routerLink='/cake/{{cards.cakeid}}'
@@ -15,6 +19,7 @@
     <span class="veg" *ngIf="cards.eggless">🟢</span>
     <span class="veg" *ngIf="!cards.eggless">🔴</span>
       <img src="{{ cards.image }}" class="card-img-top" alt="..." />
+      <hr>
       <div class="card-body">
         <h5 class="card-title">Name:&nbsp;{{ cards.name }}</h5>
         <p class="card-text">Price:&nbsp;₹ {{ cards.price }} </p>

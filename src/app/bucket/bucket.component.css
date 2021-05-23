@@ -5,7 +5,7 @@ td>.sizes{
 .minus,.plus{
     width:10px;
     height:4px;
-    border:1px solid #999;
+    border:1px solid black;
 }
 .fa-plus-square,.fa-minus-square,.fa-trash-alt{
     size:3px;
@@ -15,11 +15,12 @@ td>.sizes{
     color:red;
 }
 .fa-trash-alt:hover{
-    color:var(--gold);
+    color:black;
     size:6px;
 }
 table{
-    
+        border:1px solid black;
+
         position: relative;
         min-width:200px;
         max-width: 80%;
@@ -27,14 +28,21 @@ table{
     
 }
 thead,tr{
-    background-color: rgba(0,0,0,0.8);
-    border:1px solid navajowhite;
-    color:var(--gold);
+    background-color: aliceblue;
+    
+    color:black;
 }
  tr:hover{
     
-    color:var(--gold)!important;
+    color:black;
 } 
+.searcherror{
+    position: relative;
+    left:30vw;
+    width: max-content;
+    height:max-content;
+}
+
 @media all and (min-width: 241px) and (max-width: 480px){
     table{
     

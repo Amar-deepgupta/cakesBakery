@@ -14,7 +14,8 @@ export class SearchpageComponent implements OnInit {
   max: any;
   cakedata: any;
   message: any;
-  cakesort: any =[];
+  cakesort: any = [];
+  flag:any= false;
   constructor(
     public cakes: CakeService,
     private route: ActivatedRoute,
@@ -31,7 +32,8 @@ export class SearchpageComponent implements OnInit {
                 this.cakedata = response.data;
                 this.cakesort = this.cakedata;
                 if (!this.cakedata.length) {
-                  alert("there is no such cake");
+                
+                  this.flag = true;
                 }
                 console.log(this.cakedata);
                },
@@ -55,18 +57,19 @@ export class SearchpageComponent implements OnInit {
       this.toast.warning(this.message, "Can't search empty with value", { timeOut: 2000, positionClass: 'toast-top-center' });
       this.cakesort = this.cakedata;
     }
-    if (this.min || this.max)  {
-      this.cakesort = this.cakedata.filter(
-        (fil: any) =>
-          (this.min ? fil.price >= this.min : true) &&
-          (this.max ? fil.price <= this.max : true)
-      );
-      console.log(this.cakesort);
-    }
-    if(this.min>this.max)
+    if(this.min>this.max) 
      {
       this.toast.warning(this.message, 'Searching a wrong way ', { timeOut: 2000, positionClass: 'toast-top-center' });
       this.cakesort = this.cakedata;
-     }
+      console.log(this.cakesort);
+     }else if (this.min || this.max)  {
+      this.cakesort = this.cakedata.filter(
+        (fil: any) => 
+          (this.min ? fil.price >= this.min : true) &&
+            (this.max ? fil.price <= this.max : true)
+      );
+      console.log(this.cakesort);
+    }
+    
   }
 }

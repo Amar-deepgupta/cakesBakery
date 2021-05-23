@@ -36,22 +36,27 @@ export class NavbarComponent implements OnInit {
     this.email = localStorage.getItem("email");
     if (this.email) {
       this.flag = false;
+    
+    } else {
+      this.flag = true;
     }
   }
   logout() {
-    localStorage.removeItem("token")
-    this.rout.navigate(['/login'])
-    this.flag = true;
+    localStorage.removeItem('email')
+   
+    localStorage.removeItem("token");
+    this.rout.navigate(['/login']);
+     this.flag = true;
     this.adminflag = false;
   }
   admin() {
-     this.rout.navigate(['/admin'])
+    this.rout.navigate(['/admin']);
   }
   carts() {
-    this.rout.navigate(['/cart'])
+    this.rout.navigate(['/cart']);
   }
   myorder() {
-    this.rout.navigate(['/cakeorders'])
+    this.rout.navigate(['/cakeorders']);
   }
 //   upload(event: any) {
 //     const data: any = event.target.querySelector('input');
