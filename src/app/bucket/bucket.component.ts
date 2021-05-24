@@ -18,9 +18,7 @@ export class BucketComponent implements OnInit {
   constructor(private client: HttpClient, private router: Router, private activate: ActivatedRoute) {
     this.activate.data.subscribe((res) => {
       this.choosecake = res[0].data;
-      if (this.choosecake.length===0) {
-        this.emptyFlag = true;
-      }
+      
       console.log(this.choosecake);
     })
      this.showing();
@@ -28,7 +26,9 @@ export class BucketComponent implements OnInit {
   }
   
   showing() {
-    
+    if (this.choosecake.length===0) {
+      this.emptyFlag = true;
+    }
       this.choosecake.totalprice=(this.choosecake.reduce((acc:any,e: any) => e.price * e.quantity+acc,0))
        console.log(this.choosecake);
    }
@@ -42,6 +42,7 @@ export class BucketComponent implements OnInit {
     this.client.post(this.api + 'removecakefromcart', { cakeid:i } ).subscribe((res: any) => {
       console.log("response from removecart", res);
       if (res.message = "Removed  item from cart") {
+        this.choosecake = this.choosecake.slice(i, 1);
         this.showing();
       }
     }, (err) => {

@@ -25,7 +25,7 @@ export class NavbarComponent implements OnInit {
     this.searchValues = this.searchValue.trim();
     
     if (!this.searchValues) return;
-    this.rout.navigate(['/search'], { queryParams: { q: this.searchValues } });
+    this.rout.navigate(['/search'], { queryParams: { p: this.searchValues } });
   }
   
   
