@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { CakeService } from '../cake.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-signup',
@@ -11,6 +12,7 @@ import { Router } from '@angular/router';
 export class SignupComponent implements OnInit {
   users: any = {};
   constructor(
+    private toast:ToastrService,
     private user: CakeService,
     private client: HttpClient,
     private router: Router
@@ -25,8 +27,13 @@ export class SignupComponent implements OnInit {
         (response: any) => {
           console.log('response from signup api', response);
           this.message = response.message;
+         
           if (response.message === 'User Already Exists') {
+            
             this.router.navigate(['/login',this.users.email]);
+          } else {
+            this.toast.success(this.message, 'After verification you can login', { timeOut: 2000, positionClass: 'toast-top-center' });
+            this.router.navigate(['/login']);
           }
         },
         (error) => {
